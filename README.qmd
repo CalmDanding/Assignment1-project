@@ -1,0 +1,96 @@
+---
+title: "Read ME"
+author: "Yige Wang"
+date: "3/11/2024"
+format: 
+  html:
+    code-fold: true
+---
+
+```{r, setup}
+pacman::p_load(tidyverse, targets, gt, tidyr)
+```
+
+## Data Cleaning
+To figure out which genre gives the best rating for Christmas movies, I only keep movies shown on Christmas and only remain genres, average_rating and num_votes columns in the data.
+
+After that I generated columns to show if a movie is a particular type. For example, a column is called "Action", and if a movie's genre includes "Action", it will "TRUE", otherwise, it will be "FALSE"
+
+```{r}
+head(tar_read(movie_data))
+```
+
+I found there is no correlation between rating and the number of votes. The result of test is shown as below.
+
+```{r}
+tar_load(test_cor_result)
+test_cor_result|> broom::tidy() |> gt() |> fmt_number() |> fmt_scientific(p.value)
+```
+
+
+
+## Types of moovies
+Here shows all genres of movies
+
+```{r}
+tar_read(movie_genres)
+```
+
+The average rating of each genre is shown below:
+
+```{r}
+tar_read(total_mean_barplot)
+```
+
+## which kinds of movie will influence the rating
+
+Sometimes the particular type of movies would have an effect on public rating. In other words, people maybe tend to enjoy some kinds of movie or dislike to watch some types during Christmas holiday. Some types of movies may have no influence on the rating. It means people intend to give high rating or low rating for some particular types. Hence, I found which genres of movies could effect the rating with analysis of variance.
+
+As the table below, the genres of movies people significantly like or dislike are shown:
+Action , Animation, Comedy, Documentary, Drama, History, Horror, Music, Reality-TV, Thriller.
+
+```{r}
+tar_load(genres_aov)
+genres_aov |> broom::tidy() |> gt() |> fmt_number() |> fmt_scientific(p.value)
+```
+
+## Find out which genre gives the best rating for Christmas movies
+
+After finding which type will effect the rating (in other words, which genre's mean rating is sufficiently higher or lower than other types), I found the genre gives the best rating for Christmas movies by comparing the mean rating of each types. Because I had found which kind of movie has significantly greater or lower rating, I just needed to find which genre has highest rating.
+
+```{r}
+#| label: Figure_above
+tar_read(focused_mean_barplot)
+```
+```{r}
+tar_read(mean_data)
+```
+
+
+Absolutely, the Reality-TV gives the best rating for Christmas movies. However, the number of votes of the Reality-TV is too small comparing other kinds of movies. Thus, maybe the success of Reality-TV is just an accident. 
+
+By the @Figure_above, the History movies gives the best rating but the Documentary movies also gives excellent rating, so I needed to check if the History movies significantly exceed the Documentary movies.
+
+```{r}
+tar_load(tTest_historyDocumentary)
+tTest_historyDocumentary|> broom::tidy() |> gt() |> fmt_number() |> fmt_scientific(p.value)
+```
+
+Below table shows the result of T test to figure out if Documentary movies get higher rating than Music movies sufficiently. (Do this just for making sure)
+
+```{r}
+tar_load(tTest_documentaryMusic)
+tTest_documentaryMusic|> broom::tidy() |> gt() |> fmt_number() |> fmt_scientific(p.value)
+```
+
+The History movies are not significantly better rating than Documentary movies, but the Documentary movies indeed give significantly better rating than Music movies.
+
+### Conclusion
+
+The Reality-TV give best rating but there is just few votes which means it get best rating maybe just an accident.
+
+Considering this, the History movies (the second high rating) gives the best rating while the Documentary movies also gives excellent rating, but the History movies are not significantly better rating than Documentary movies, so maybe they are both the best genres as Christmas movies (ignoring Reality-TV).
+
+
+
+

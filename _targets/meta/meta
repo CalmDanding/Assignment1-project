@@ -1,0 +1,30 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+.Random.seed|object|76892a9414bc34a3|||||||||||||||
+clean_data|function|e648a7febca2cc49|||||||||||||||
+clean_movie|function|0f879b709f2c3e07|||||||||||||||
+cor_test|function|bb6ffac29a24feef|||||||||||||||
+focused_genres|stem|37b9c082617cf4ed|f1e697022e0fb23f|ef46db3751d8e999|-2048529719||t19793.5721289369s|4b9eeb7e647347d1|144|rds|local|vector|||0.47|package gt was built under R version 4.3.3|
+focused_mean_barplot|stem|5545ed39dfce28ff|f468ac1f18d03478|23497f104b289412|-1773712877||t19798.5716754837s|6a11ddf35bf98249|43670|rds|local|vector|||0||
+generate_data|function|9c9976f55f55d0b7|||||||||||||||
+genre_anova|function|9f8cb359d7faf0be|||||||||||||||
+genre_aov|stem|cc4279fd6e7c308e|97ea9b85f827d9d9|b4b832ce01adec8a|1788707081||t19793.5244208356s|cf1c23def75b2f69|248738|rds|local|vector|||0.01||
+genres_aov|stem|cc4279fd6e7c308e|97ea9b85f827d9d9|b4b832ce01adec8a|-219228476||t19793.5247755471s|cf1c23def75b2f69|248738|rds|local|vector|||0.02||
+get_barplot|function|fbc480d6161c3faa|||||||||||||||
+get_genres|function|d32c207551565f3b|||||||||||||||
+get_mean|function|a339d8f2c0cc9a36|||||||||||||||
+mean_data|stem|1e88f4bde841d3a3|e1336786aa8ea6ab|b6a9b9698f6a6703|-63937767||t19793.57939867s|2bff303c02f1cf66|379|rds|local|vector|||0.03||
+movie_clean|stem|fce78767f1ab1f85|4c5de089b5e20d0e|f8f6fa8e349ab89f|1681690405||t19793.5034241601s|bf326c97dd504ae0|12291|rds|local|vector|||0.08||
+movie_data|stem|127bddc08320df4b|9c84beef5f73fc03|9417a424f44492c0|616886151||t19793.5222559461s|fa5696058182f312|17093|rds|local|vector|||0.37||
+movie_file|stem|dd656fb87e7d026f|f648f7be256f814a|ef46db3751d8e999|-1558945838|raw-data/movies.xlsx|t19779.3488770696s|8b557187f8be1a5c|193759|file|local|vector|||0.48|package gt was built under R version 4.3.3|
+movie_genres|stem|dac41e47cb7794b9|cc8db6c242eeaca7|05a32ebff5d30922|1616101445||t19793.503425273s|036fa79c5dd9944c|238|rds|local|vector|||0.07||
+movie_histogram|stem|9eccab023c377e00|c7276069523c31fd|2b586295a034295c|136584996||t19793.2919706107s|de9bbb7ce1eb5467|76809|rds|local|vector|||0.01||
+plot_histogram|function|9629e9b6bcaa5679|||||||||||||||
+readme|stem|e2fa154c0b087b80|7c66223e5088d438|d942a3f9061c1f44|980901812|README.html*README_files*README.qmd|t19798.5547457461s|5127c06b376548b3|81947|file|local|vector|||5.8||
+test_cor|function|bb6ffac29a24feef|||||||||||||||
+test_cor_result|stem|e7b92651433dc4fc|50ad3fd983731a37|4574a4df28d70fd0|1293449008||t19793.6022473643s|86ba68e3cf76027d|376|rds|local|vector|||0.02||
+total_mean_barplot|stem|152acc7dd7c8ca80|720ce364d70c3de5|f3badfdb2af90b2e|1574447560||t19798.5646761229s|f9b59ba8578de63c|44315|rds|local|vector|||0||
+total_mean_data|stem|ab4fd9dc33daa906|b42c185c37b11935|d9fb56cf36140a90|-1933157446||t19798.5615116281s|8ea2896700a786ce|673|rds|local|vector|||0.02||
+tTest_documentary_Music|function|913c9208da6d45b2|||||||||||||||
+tTest_documentaryMusic|stem|5215cac46b244543|bffe349de20781f5|082fafa6b409b35a|-1356419192||t19793.6190790811s|bee34feafdb8a59e|404|rds|local|vector|||0||
+tTest_history_Documentary|function|f9916165062cac72|||||||||||||||
+tTest_historyDocumentary|stem|cf247908c240c7e8|3ca84adf72254ebe|525aa35a69edffc3|-2032631066||t19793.619080104s|e8324796932fa831|400|rds|local|vector|||0.05||
